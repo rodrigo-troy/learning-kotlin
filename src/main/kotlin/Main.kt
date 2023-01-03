@@ -1,3 +1,6 @@
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 fun printMatrix(matrix: Array<IntArray>) {
     println()
     print("Cinema:\n  ")
@@ -22,12 +25,19 @@ fun main(args: Array<String>) {
     //printInvertedString()
     //findAvailableSpace(args)
     //printLine()
-    luckyNumber()
+    convertDate()
 }
 
-fun luckyNumber(){
+fun convertDate() {
+    val date = "2019-12-31"
+    val formattedDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+    println(formattedDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")))
+
+}
+
+fun luckyNumber() {
     val num = "090234"
-    if ( num.substring(0,3).map { it.digitToInt() }.sum() == num.substring(3,6).map { it.digitToInt() }.sum()) {
+    if (num.substring(0, 3).map { it.digitToInt() }.sum() == num.substring(3, 6).map { it.digitToInt() }.sum()) {
         println("Lucky")
     } else {
         println("Regular")
