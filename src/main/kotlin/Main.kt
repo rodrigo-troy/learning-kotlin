@@ -1,5 +1,6 @@
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 fun printMatrix(matrix: Array<IntArray>) {
     println()
@@ -25,7 +26,22 @@ fun main(args: Array<String>) {
     //printInvertedString()
     //findAvailableSpace(args)
     //printLine()
-    convertDate()
+    //convertDate()
+    getPercentage()
+}
+
+fun getPercentage() {
+    val letters = listOf('c', 'g')
+    var count = 0
+
+    val word = readln().lowercase(Locale.getDefault())
+    for (c in word) {
+        if (letters.contains(c)) {
+            count++
+        }
+    }
+
+    println(count.toDouble() / word.length * 100)
 }
 
 fun convertDate() {
