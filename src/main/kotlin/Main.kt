@@ -27,7 +27,13 @@ fun main(args: Array<String>) {
     //findAvailableSpace(args)
     //printLine()
     //convertDate()
-    getPercentage()
+    //getPercentage()
+    destructuring()
+}
+
+fun destructuring() {
+    val (first, last, age) = readln().split(" ")
+    println("${first.uppercase(Locale.getDefault()).first()}. $last, $age years old")
 }
 
 fun getPercentage() {
