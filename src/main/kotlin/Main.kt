@@ -30,6 +30,11 @@ fun printDogFace() {
     println("      ||     ||")
 }
 
+fun createSizeClass() {
+    val size = Size(10, 20)
+    println("The area is ${size.area}")
+}
+
 fun main(args: Array<String>) {
     //printInvertedString()
     //findAvailableSpace(args)
@@ -37,7 +42,7 @@ fun main(args: Array<String>) {
     //convertDate()
     //getPercentage()
     //destructuring()
-    printDogFace()
+    createSizeClass()
 }
 
 fun destructuring() {
