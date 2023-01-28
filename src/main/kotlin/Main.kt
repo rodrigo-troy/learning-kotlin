@@ -35,6 +35,11 @@ fun createSizeClass() {
     println("The area is ${size.area}")
 }
 
+fun createByteTimer() {
+    val timer = ByteTimer(200)
+    println(timer.time)
+}
+
 fun main(args: Array<String>) {
     //printInvertedString()
     //findAvailableSpace(args)
