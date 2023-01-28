@@ -22,13 +22,27 @@ fun printMatrix(matrix: Array<IntArray>) {
     println()
 }
 
+//You are given a MutableList of strings and a String in the input. Replace the occurrences of the given String in the MutableList with Banana.
+fun process(strings: MutableList<String>, str: String): MutableList<String> {
+    strings.replaceAll { if (it == str) "Banana" else it }
+}
+
+fun printDogFace() {
+    println("   ^__^")
+    println("  (oo)\\_______")
+    println("  (__)\\       )\\/\\")
+    println("      ||----w |")
+    println("      ||     ||")
+}
+
 fun main(args: Array<String>) {
     //printInvertedString()
     //findAvailableSpace(args)
     //printLine()
     //convertDate()
     //getPercentage()
-    destructuring()
+    //destructuring()
+    printDogFace()
 }
 
 fun destructuring() {
