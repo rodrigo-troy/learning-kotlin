@@ -22,11 +22,6 @@ fun printMatrix(matrix: Array<IntArray>) {
     println()
 }
 
-//You are given a MutableList of strings and a String in the input. Replace the occurrences of the given String in the MutableList with Banana.
-fun process(strings: MutableList<String>, str: String): MutableList<String> {
-    strings.replaceAll { if (it == str) "Banana" else it }
-}
-
 fun printDogFace() {
     println("   ^__^")
     println("  (oo)\\_______")
