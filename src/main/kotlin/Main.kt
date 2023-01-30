@@ -30,6 +30,8 @@ fun printDogFace() {
     println("      ||     ||")
 }
 
+fun countDivisibleNumbers(a: Int, b: Int, n: Int): Int = (a..b).count { it % n == 0 }.also { println(it) }
+
 fun createSizeClass() {
     val size = Size(10, 20)
     println("The area is ${size.area}")
@@ -47,7 +49,7 @@ fun main(args: Array<String>) {
     //convertDate()
     //getPercentage()
     //destructuring()
-    createSizeClass()
+    countDivisibleNumbers(-10, 10, 5)
 }
 
 fun destructuring() {
