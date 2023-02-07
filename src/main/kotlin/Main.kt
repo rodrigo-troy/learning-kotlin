@@ -30,16 +30,35 @@ fun printDogFace() {
     println("      ||     ||")
 }
 
-fun countDivisibleNumbers(a: Int, b: Int, n: Int): Int = (a..b).count { it % n == 0 }.also { println(it) }
+fun countDivisibleNumbers(a: Int,
+                          b: Int,
+                          n: Int): Int = (a..b).count { it % n == 0 }.also { println(it) }
 
 fun createSizeClass() {
-    val size = Size(10, 20)
+    val size = Size(10,
+                    20)
     println("The area is ${size.area}")
 }
 
 fun createByteTimer() {
     val timer = ByteTimer(200)
     println(timer.time)
+}
+
+//Given the number N with an even number of digits.
+// If the sum of the first half of the digits equals the sum of the second half of the digits, then this number is considered lucky.
+// For a given number, output "YES" if this number is lucky, otherwise output "NO".
+fun luckyNumber() {
+    val num = readln()
+    val num1 = num.substring(0,
+                             num.length / 2).map { it.digitToInt() }.sum()
+    val num2 = num.substring(num.length / 2).map { it.digitToInt() }.sum()
+
+    if (num1 == num2) {
+        println("YES")
+    } else {
+        println("NO")
+    }
 }
 
 fun main(args: Array<String>) {
@@ -49,7 +68,9 @@ fun main(args: Array<String>) {
     //convertDate()
     //getPercentage()
     //destructuring()
-    countDivisibleNumbers(-10, 10, 5)
+    countDivisibleNumbers(-10,
+                          10,
+                          5)
 }
 
 fun destructuring() {
@@ -58,7 +79,8 @@ fun destructuring() {
 }
 
 fun getPercentage() {
-    val letters = listOf('c', 'g')
+    val letters = listOf('c',
+                         'g')
     var count = 0
 
     val word = readln().lowercase(Locale.getDefault())
@@ -73,18 +95,10 @@ fun getPercentage() {
 
 fun convertDate() {
     val date = "2019-12-31"
-    val formattedDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+    val formattedDate = LocalDate.parse(date,
+                                        DateTimeFormatter.ofPattern("yyyy-MM-dd"))
     println(formattedDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")))
 
-}
-
-fun luckyNumber() {
-    val num = "090234"
-    if (num.substring(0, 3).map { it.digitToInt() }.sum() == num.substring(3, 6).map { it.digitToInt() }.sum()) {
-        println("Lucky")
-    } else {
-        println("Regular")
-    }
 }
 
 fun printLine() = List(5) { readln() }
@@ -99,9 +113,12 @@ fun findAvailableSpace(args: Array<String>) {
     val split2 = readln().split(" ")
     val split3 = readln().split(" ")
     val occupiedCells = listOf(
-        Pair(split1[0].toInt(), split1[1].toInt()),
-        Pair(split2[0].toInt(), split2[1].toInt()),
-        Pair(split3[0].toInt(), split3[1].toInt())
+            Pair(split1[0].toInt(),
+                 split1[1].toInt()),
+            Pair(split2[0].toInt(),
+                 split2[1].toInt()),
+            Pair(split3[0].toInt(),
+                 split3[1].toInt())
     )
 
     occupiedCells.forEach { println(it) }
