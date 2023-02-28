@@ -61,6 +61,15 @@ fun luckyNumber() {
     }
 }
 
+fun splitString(text: String,
+                pieces: Int) {
+    //create a whitespace regex
+    val regex = Regex("\\s+")
+    val result = text.split(regex,
+                            pieces)
+    result.forEach(::println)
+}
+
 fun main(args: Array<String>) {
     //printInvertedString()
     //findAvailableSpace(args)
@@ -71,6 +80,8 @@ fun main(args: Array<String>) {
     countDivisibleNumbers(-10,
                           10,
                           5)
+    splitString("Hello, world! I am a Kotlin programmer. I love Kotlin!",
+                3)
 }
 
 fun destructuring() {
