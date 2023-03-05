@@ -75,6 +75,41 @@ fun printColors() {
 
 // Reset colors
     println("\u001B[0m")
+    println()
+
+    println("Standard foreground colors")
+    for (i in 0..15) print("\u001b[38;5;${i}m ${"%3d".format(i)}")
+
+    println()
+    println()
+    print("216 foreground colors")
+    for (i in 16..231) {
+        if ((i - 16) % 36 == 0) println()
+        print("\u001b[38;5;${i}m ${"%3d".format(i)}")
+    }
+    println("\u001B[0m")
+    println()
+
+    println("Foreground grayscale shades")
+    for (i in 232..255) print("\u001b[38;5;${i}m ${"%3d".format(i)}")
+    println()
+
+    println("Standard background colors")
+    for (i in 0..15) print("\u001b[48;5;${i}m ${"%3d".format(i)}")
+    println("\u001B[0m")
+    println()
+    print("216 background colors")
+    for (i in 16..231) {
+        if ((i - 16) % 36 == 0) println("\u001B[0m")
+        print("\u001b[48;5;${i}m ${"%3d".format(i)}")
+    }
+    println("\u001B[0m")
+    println()
+    println("Background grayscale shades")
+    for (i in 232..255)
+        print("\u001b[48;5;${i}m ${"%3d".format(i)}")
+    println("\u001B[0m")
+
     println("Done!")
 }
 
