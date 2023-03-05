@@ -122,6 +122,8 @@ fun splitString(text: String,
     result.forEach(::println)
 }
 
+fun f(n: Int): Int = if (n > 2) f(n - 1) + f(n - 2) + f(n - 3) else n
+
 fun main(args: Array<String>) {
     //printInvertedString()
     //findAvailableSpace(args)
@@ -134,7 +136,8 @@ fun main(args: Array<String>) {
                            5)*/
     /* splitString("Hello, world! I am a Kotlin programmer. I love Kotlin!",
                  3)*/
-    printColors()
+    //printColors()
+    println(f(6))
 }
 
 fun destructuring() {
@@ -215,4 +218,11 @@ fun printInvertedString() {
         print(str[i])
         i--
     }
+}
+
+fun checkRange() {
+    val (a, b, c, d, n) = List(5) { readln().toInt() }
+    val range1 = a..b
+    val range2 = c..d
+    println(n in range1 || n in range2)
 }
