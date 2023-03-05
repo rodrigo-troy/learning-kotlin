@@ -61,6 +61,23 @@ fun luckyNumber() {
     }
 }
 
+fun printColors() {
+    // Set foreground colors
+    for (i in 30..37) print("\u001b[${i}m ${"%3d".format(i)}  ")
+    for (i in 90..97) print("\u001b[${i}m ${"%3d".format(i)}  ")
+
+// Reset colors
+    println("\u001B[0m")
+
+// Set background colors
+    for (i in 40..47) print("\u001b[${i}m ${"%3d".format(i)}  ")
+    for (i in 100..107) print("\u001b[${i}m ${"%3d".format(i)}  ")
+
+// Reset colors
+    println("\u001B[0m")
+    println("Done!")
+}
+
 fun splitString(text: String,
                 pieces: Int) {
     //create a whitespace regex
@@ -77,11 +94,12 @@ fun main(args: Array<String>) {
     //convertDate()
     //getPercentage()
     //destructuring()
-    countDivisibleNumbers(-10,
-                          10,
-                          5)
-    splitString("Hello, world! I am a Kotlin programmer. I love Kotlin!",
-                3)
+    /* countDivisibleNumbers(-10,
+                           10,
+                           5)*/
+    /* splitString("Hello, world! I am a Kotlin programmer. I love Kotlin!",
+                 3)*/
+    printColors()
 }
 
 fun destructuring() {
