@@ -1,6 +1,9 @@
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import kotlinx.datetime.DateTimeUnit
+import kotlinx.datetime.LocalDate
+import kotlinx.datetime.until
+import java.io.File
 import java.util.*
+import kotlin.math.absoluteValue
 
 fun printMatrix(matrix: Array<IntArray>) {
     println()
@@ -30,13 +33,17 @@ fun printDogFace() {
     println("      ||     ||")
 }
 
-fun countDivisibleNumbers(a: Int,
-                          b: Int,
-                          n: Int): Int = (a..b).count { it % n == 0 }.also { println(it) }
+fun countDivisibleNumbers(
+    a: Int,
+    b: Int,
+    n: Int
+): Int = (a..b).count { it % n == 0 }.also { println(it) }
 
 fun createSizeClass() {
-    val size = Size(10,
-                    20)
+    val size = Size(
+        10,
+        20
+    )
     println("The area is ${size.area}")
 }
 
@@ -50,8 +57,10 @@ fun createByteTimer() {
 // For a given number, output "YES" if this number is lucky, otherwise output "NO".
 fun luckyNumber() {
     val num = readln()
-    val num1 = num.substring(0,
-                             num.length / 2).map { it.digitToInt() }.sum()
+    val num1 = num.substring(
+        0,
+        num.length / 2
+    ).map { it.digitToInt() }.sum()
     val num2 = num.substring(num.length / 2).map { it.digitToInt() }.sum()
 
     if (num1 == num2) {
@@ -113,12 +122,16 @@ fun printColors() {
     println("Done!")
 }
 
-fun splitString(text: String,
-                pieces: Int) {
+fun splitString(
+    text: String,
+    pieces: Int
+) {
     //create a whitespace regex
     val regex = Regex("\\s+")
-    val result = text.split(regex,
-                            pieces)
+    val result = text.split(
+        regex,
+        pieces
+    )
     result.forEach(::println)
 }
 
@@ -128,7 +141,6 @@ fun main(args: Array<String>) {
     //printInvertedString()
     //findAvailableSpace(args)
     //printLine()
-    //convertDate()
     //getPercentage()
     //destructuring()
     /* countDivisibleNumbers(-10,
@@ -137,7 +149,8 @@ fun main(args: Array<String>) {
     /* splitString("Hello, world! I am a Kotlin programmer. I love Kotlin!",
                  3)*/
     //printColors()
-    println(f(6))
+    //println(f(6))
+    println(daysDifference("2020-01-01", "2020-01-02"))
 }
 
 fun destructuring() {
@@ -146,8 +159,20 @@ fun destructuring() {
 }
 
 fun getPercentage() {
-    val letters = listOf('c',
-                         'g')
+    Scanner(File("file.txt")).use { sc ->
+        val number = sc.nextInt()
+        println(number * 100)
+    }
+
+    Scanner(File("file.txt")).use { scanner ->
+        val number = scanner.nextInt()
+        println(number * 100)
+    }
+
+    val letters = listOf(
+        'c',
+        'g'
+    )
     var count = 0
 
     val word = readln().lowercase(Locale.getDefault())
@@ -160,17 +185,30 @@ fun getPercentage() {
     println(count.toDouble() / word.length * 100)
 }
 
-fun convertDate() {
-    val date = "2019-12-31"
-    val formattedDate = LocalDate.parse(date,
-                                        DateTimeFormatter.ofPattern("yyyy-MM-dd"))
-    println(formattedDate.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")))
+fun daysDifference(date1: String, date2: String): Int {
+    val d1 = LocalDate.parse(date1)
+    val d2 = LocalDate.parse(date2)
 
+    return d1.until(d2, DateTimeUnit.DAY).absoluteValue
 }
 
 fun printLine() = List(5) { readln() }
     .map { "$it " }
     .forEach(::print)
+
+fun invertArray() {
+    //Do not touch code below
+    var inputArray: Array<Array<String>> = arrayOf()
+    val n = readLine()!!.toInt()
+    for (i in 0 until n) {
+        val strings = readLine()!!.split(' ').toTypedArray()
+        inputArray += strings
+    }
+    val newArray = arrayOf(inputArray[inputArray.size - 1].reversedArray(), inputArray[0].reversedArray())
+
+    println(newArray.contentDeepToString())
+
+}
 
 fun findAvailableSpace(args: Array<String>) {
     println("Program arguments: ${args.joinToString()}")
@@ -180,12 +218,18 @@ fun findAvailableSpace(args: Array<String>) {
     val split2 = readln().split(" ")
     val split3 = readln().split(" ")
     val occupiedCells = listOf(
-            Pair(split1[0].toInt(),
-                 split1[1].toInt()),
-            Pair(split2[0].toInt(),
-                 split2[1].toInt()),
-            Pair(split3[0].toInt(),
-                 split3[1].toInt())
+        Pair(
+            split1[0].toInt(),
+            split1[1].toInt()
+        ),
+        Pair(
+            split2[0].toInt(),
+            split2[1].toInt()
+        ),
+        Pair(
+            split3[0].toInt(),
+            split3[1].toInt()
+        )
     )
 
     occupiedCells.forEach { println(it) }

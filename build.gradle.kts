@@ -13,7 +13,8 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
+    implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+    testImplementation(kotlin("test"));
 }
 
 tasks.test {
