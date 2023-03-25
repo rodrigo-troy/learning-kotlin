@@ -5,6 +5,35 @@ import java.io.File
 import java.util.*
 import kotlin.math.absoluteValue
 
+
+fun main(args: Array<String>) {
+    //printInvertedString()
+    //findAvailableSpace(args)
+    //printLine()
+    //getPercentage()
+    //destructuring()
+    /* countDivisibleNumbers(-10,
+                           10,
+                           5)*/
+    /* splitString("Hello, world! I am a Kotlin programmer. I love Kotlin!",
+                 3)*/
+    //printColors()
+    //println(f(6))
+    //println(daysDifference("2020-01-01", "2020-01-02"))
+    printThirdRow()
+}
+
+
+fun printThirdRow() {
+    val inputArray = arrayOf(
+        arrayOf("(¬‿¬)_", "Program"),
+        arrayOf("_(^.^)/", "with"),
+        arrayOf("(>^_^)>", "Kotlin!")
+    )
+
+    print(inputArray[2].joinToString(" "))
+}
+
 fun printMatrix(matrix: Array<IntArray>) {
     println()
     print("Cinema:\n  ")
@@ -136,22 +165,6 @@ fun splitString(
 }
 
 fun f(n: Int): Int = if (n > 2) f(n - 1) + f(n - 2) + f(n - 3) else n
-
-fun main(args: Array<String>) {
-    //printInvertedString()
-    //findAvailableSpace(args)
-    //printLine()
-    //getPercentage()
-    //destructuring()
-    /* countDivisibleNumbers(-10,
-                           10,
-                           5)*/
-    /* splitString("Hello, world! I am a Kotlin programmer. I love Kotlin!",
-                 3)*/
-    //printColors()
-    //println(f(6))
-    println(daysDifference("2020-01-01", "2020-01-02"))
-}
 
 fun destructuring() {
     val (first, last, age) = readln().split(" ")
