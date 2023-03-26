@@ -72,3 +72,21 @@ object Wizard : Class {
 class DangerousKotlinEnemyWarrior : Level by Dangerous, Enemy by Foe, Class by Warrior
 
 class NotDangerousFriendlyWizard : Level by NotDangerous, Enemy by Friend, Class by Wizard
+
+interface PrinterInterface {
+    fun printSomething() = print("something")
+    fun printSomethingElse() = print("something else")
+}
+
+interface NewLinePrinterInterface {
+    fun printSomething() = println("new line something")
+    fun printSomethingElse() = println("new line something else")
+}
+
+class MultiPrinterClass : PrinterInterface, NewLinePrinterInterface {
+    override fun printSomething() = print("classy something")
+
+    override fun printSomethingElse() {
+        super<PrinterInterface>.printSomething()
+    }
+}
