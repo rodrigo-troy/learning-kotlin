@@ -73,20 +73,19 @@ class DangerousKotlinEnemyWarrior : Level by Dangerous, Enemy by Foe, Class by W
 
 class NotDangerousFriendlyWizard : Level by NotDangerous, Enemy by Friend, Class by Wizard
 
-interface PrinterInterface {
-    fun printSomething() = print("something")
-    fun printSomethingElse() = print("something else")
-}
+fun main() {
+    val dangerousEnemyWarrior = DangerousEnemyWarrior()
+    println("Level: ${dangerousEnemyWarrior.getLevel()}")
+    println("Is enemy: ${dangerousEnemyWarrior.isEnemy()}")
+    println("Class: ${dangerousEnemyWarrior.getClass()}")
 
-interface NewLinePrinterInterface {
-    fun printSomething() = println("new line something")
-    fun printSomethingElse() = println("new line something else")
-}
+    val dangerousKotlinEnemyWarrior = DangerousKotlinEnemyWarrior()
+    println("Level: ${dangerousKotlinEnemyWarrior.getLevel()}")
+    println("Is enemy: ${dangerousKotlinEnemyWarrior.isEnemy()}")
+    println("Class: ${dangerousKotlinEnemyWarrior.getClass()}")
 
-class MultiPrinterClass : PrinterInterface, NewLinePrinterInterface {
-    override fun printSomething() = print("classy something")
-
-    override fun printSomethingElse() {
-        super<PrinterInterface>.printSomething()
-    }
+    val notDangerousFriendlyWizard = NotDangerousFriendlyWizard()
+    println("Level: ${notDangerousFriendlyWizard.getLevel()}")
+    println("Is enemy: ${notDangerousFriendlyWizard.isEnemy()}")
+    println("Class: ${notDangerousFriendlyWizard.getClass()}")
 }
