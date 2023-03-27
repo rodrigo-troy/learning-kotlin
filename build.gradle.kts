@@ -13,8 +13,10 @@ repositories {
 }
 
 dependencies {
+    implementation("ch.qos.logback:logback-classic:1.2.11")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
-    testImplementation(kotlin("test"));
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.8.10");
 }
 
 tasks.test {
@@ -22,7 +24,10 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+
+    //set the kotlin compiler version 17
+    kotlinOptions.jvmTarget = "17"
+
 }
 
 application {
