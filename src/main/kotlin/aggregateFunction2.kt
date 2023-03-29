@@ -53,13 +53,11 @@ fun main() {
         println(e)
     }
 
-    // MaxWithOrNull/MinWithOrNull
-    println(words.maxWithOrNull(compareBy { it.length })) // caroline
-    println(words.minWithOrNull(compareBy { it.length })) // anne
+    println(words.maxWithOrNull(compareBy { it.length }))
+    println(words.minWithOrNull(compareBy { it.length }))
 
-    // maxOfWithOrNull/minOfWithOrNull
-    println(words.maxOfWithOrNull(naturalOrder()) { it.length }) // 8
-    println(words.minOfWithOrNull(naturalOrder()) { it.length }) // 4
-
-    // count// 1
+    println(words.maxOfWithOrNull(naturalOrder()) { it.length })
+    println(words.minOfWithOrNull(naturalOrder()) { it.length })
+    println(words.sortedWith(compareBy { it.length }).reversed())
+    println(words.sortedWith(compareBy { it[it.length / 2] }).reversed())
 }
