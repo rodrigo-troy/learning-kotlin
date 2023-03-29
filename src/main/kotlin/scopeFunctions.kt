@@ -4,6 +4,18 @@ $ Project: learning-kotlin
  * User: rodrigotroy
  * Date: 27-03-23
  * Time: 13:25
+ * https://kotlinlang.org/docs/scope-functions.html
+ * https://hyperskill.org/learn/step/23478
+ *
+ * Recommendations:
+ *
+ * Executing a lambda on non-null objects: let
+ * Introducing an expression as a variable in local scope: let
+ * Object configuration: apply
+ * Object configuration and computing the result: run
+ * Running statements where an expression is required: non-extension run
+ * Additional effects: also
+ * Grouping function calls on an object: with
  */
 data class Musician(var name: String, var instrument: String = "Guitar", var band: String = "Radiohead")
 
