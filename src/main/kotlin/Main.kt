@@ -3,7 +3,10 @@ import kotlinx.datetime.LocalDate
 import kotlinx.datetime.until
 import java.io.File
 import java.util.*
+import kotlin.math.PI
 import kotlin.math.absoluteValue
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 
 fun main(args: Array<String>) {
@@ -23,12 +26,37 @@ fun main(args: Array<String>) {
     printThirdRow()
 }
 
+private const val pi = PI
+
+fun calculateArea() {
+    when (readLine()) {
+        "triangle"  -> {
+            val (a, b, c) = List(3) { readln().toDouble() }
+            val p = (a + b + c) / 2
+            println(sqrt(p * (p - a) * (p - b) * (p - c)))
+        }
+
+        "rectangle" -> {
+            val result = List(2) { readln().toDouble() }.reduce { acc, d -> acc * d }
+            println(result)
+        }
+
+        "circle"    -> {
+            val r = readln().toDouble()
+            println(pi * r.pow(2))
+        }
+    }
+}
+
 
 fun printThirdRow() {
     val inputArray = arrayOf(
-        arrayOf("(¬‿¬)_", "Program"),
-        arrayOf("_(^.^)/", "with"),
-        arrayOf("(>^_^)>", "Kotlin!")
+        arrayOf("(¬‿¬)_",
+                "Program"),
+        arrayOf("_(^.^)/",
+                "with"),
+        arrayOf("(>^_^)>",
+                "Kotlin!")
     )
 
     print(inputArray[2].joinToString(" "))
@@ -202,7 +230,8 @@ fun daysDifference(date1: String, date2: String): Int {
     val d1 = LocalDate.parse(date1)
     val d2 = LocalDate.parse(date2)
 
-    return d1.until(d2, DateTimeUnit.DAY).absoluteValue
+    return d1.until(d2,
+                    DateTimeUnit.DAY).absoluteValue
 }
 
 fun printLine() = List(5) { readln() }
@@ -217,7 +246,8 @@ fun invertArray() {
         val strings = readLine()!!.split(' ').toTypedArray()
         inputArray += strings
     }
-    val newArray = arrayOf(inputArray[inputArray.size - 1].reversedArray(), inputArray[0].reversedArray())
+    val newArray = arrayOf(inputArray[inputArray.size - 1].reversedArray(),
+                           inputArray[0].reversedArray())
 
     println(newArray.contentDeepToString())
 
