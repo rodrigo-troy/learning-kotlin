@@ -179,9 +179,8 @@ fun printColors() {
     println("Done!")
 }
 
-fun splitString(
-    text: String,
-    pieces: Int
+fun splitString(text: String,
+                pieces: Int
 ) {
     //create a whitespace regex
     val regex = Regex("\\s+")
