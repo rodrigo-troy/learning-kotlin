@@ -33,3 +33,16 @@ class Foo {
         val foo = "str".foo(42)
     }
 }
+
+class ListUtils {
+    companion object Info {
+        fun <T> info(list: List<T>): String {
+            return if (list.isEmpty()) {
+                "[]"
+            } else {
+                list.joinToString(prefix = "[",
+                                  postfix = "]")
+            }
+        }
+    }
+}
