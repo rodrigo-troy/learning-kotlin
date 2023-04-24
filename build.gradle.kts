@@ -1,22 +1,23 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.7.21"
+    kotlin("jvm") version "1.8.20"
     application
 }
 
 group = "me.rodrigotroy"
-version = "1.0-SNAPSHOT"
+version = "0.1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation("ch.qos.logback:logback-classic:1.2.11")
+    implementation("ch.qos.logback:logback-classic:1.4.6")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
-    testImplementation("org.jetbrains.kotlin:kotlin-test:1.8.10");
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.8.10")
+    testImplementation("io.mockk:mockk:1.13.5")
 }
 
 tasks.test {
