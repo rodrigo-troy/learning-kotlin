@@ -1,3 +1,5 @@
+package `interface`.composition
+
 interface Color {
     fun getColorCode(): String
 }

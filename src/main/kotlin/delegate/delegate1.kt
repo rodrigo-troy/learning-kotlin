@@ -1,3 +1,5 @@
+package delegate
+
 /**
  * Created with IntelliJ IDEA.
 $ Project: learning-kotlin

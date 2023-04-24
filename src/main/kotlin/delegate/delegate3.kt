@@ -1,3 +1,5 @@
+package delegate
+
 /**
  * Created with IntelliJ IDEA.
 $ Project: learning-kotlin
@@ -33,6 +35,6 @@ fun main() {
     val index = IndexData(5)
     val value = ValueData(10)
     val logDataCollector = LogDataCollector(index,
-                                            value)
+        value)
     logDataCollector.print()
 }

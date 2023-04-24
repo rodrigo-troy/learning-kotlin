@@ -1,3 +1,5 @@
+package `interface`
+
 /**
  * Created with IntelliJ IDEA.
 $ Project: learning-kotlin
