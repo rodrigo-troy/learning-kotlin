@@ -312,3 +312,9 @@ fun checkRange() {
     val range2 = c..d
     println(n in range1 || n in range2)
 }
+
+fun <T> getStringsOnly(list: List<T>): List<String> {
+    val result = list.filterIsInstance<String>()
+
+    return result
+}
