@@ -23,14 +23,17 @@ fun main(args: Array<String>) {
     //printColors()
     //println(f(6))
     //println(daysDifference("2020-01-01", "2020-01-02"))
-    printThirdRow()
+    //printThirdRow()
+    printMaxValue()
 }
 
 private const val pi = PI
 
+fun printMaxValue() = println(generateSequence { readln().toInt() }.takeWhile { it != 0 }.maxOrNull())
+
 fun calculateArea() {
     when (readLine()) {
-        "triangle"  -> {
+        "triangle" -> {
             val (a, b, c) = List(3) { readln().toDouble() }
             val p = (a + b + c) / 2
             println(sqrt(p * (p - a) * (p - b) * (p - c)))
@@ -41,7 +44,7 @@ fun calculateArea() {
             println(result)
         }
 
-        "circle"    -> {
+        "circle" -> {
             val r = readln().toDouble()
             println(pi * r.pow(2))
         }
@@ -51,12 +54,18 @@ fun calculateArea() {
 
 fun printThirdRow() {
     val inputArray = arrayOf(
-        arrayOf("(¬‿¬)_",
-                "Program"),
-        arrayOf("_(^.^)/",
-                "with"),
-        arrayOf("(>^_^)>",
-                "Kotlin!")
+        arrayOf(
+            "(¬‿¬)_",
+            "Program"
+        ),
+        arrayOf(
+            "_(^.^)/",
+            "with"
+        ),
+        arrayOf(
+            "(>^_^)>",
+            "Kotlin!"
+        )
     )
 
     print(inputArray[2].joinToString(" "))
@@ -179,8 +188,9 @@ fun printColors() {
     println("Done!")
 }
 
-fun splitString(text: String,
-                pieces: Int
+fun splitString(
+    text: String,
+    pieces: Int
 ) {
     //create a whitespace regex
     val regex = Regex("\\s+")
@@ -229,8 +239,10 @@ fun daysDifference(date1: String, date2: String): Int {
     val d1 = LocalDate.parse(date1)
     val d2 = LocalDate.parse(date2)
 
-    return d1.until(d2,
-                    DateTimeUnit.DAY).absoluteValue
+    return d1.until(
+        d2,
+        DateTimeUnit.DAY
+    ).absoluteValue
 }
 
 fun printLine() = List(5) { readln() }
@@ -245,8 +257,10 @@ fun invertArray() {
         val strings = readLine()!!.split(' ').toTypedArray()
         inputArray += strings
     }
-    val newArray = arrayOf(inputArray[inputArray.size - 1].reversedArray(),
-                           inputArray[0].reversedArray())
+    val newArray = arrayOf(
+        inputArray[inputArray.size - 1].reversedArray(),
+        inputArray[0].reversedArray()
+    )
 
     println(newArray.contentDeepToString())
 
