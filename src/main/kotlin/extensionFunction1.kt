@@ -7,15 +7,17 @@ $ Project: learning-kotlin
  */
 class BiggerBox<T>(var value1: T, var value2: T) {}
 
-fun <T> BiggerBox<T>.changeBoxes() {
+private fun <T> BiggerBox<T>.changeBoxes() {
     val tmp = this.value1
     this.value1 = this.value2
     this.value2 = tmp
 }
 
-fun main() {
-    val box: BiggerBox<String> = BiggerBox("hyperskill",
-                                           "kotlin")
+private fun main() {
+    val box: BiggerBox<String> = BiggerBox(
+        "hyperskill",
+        "kotlin"
+    )
     println("${box.value1} and ${box.value2}")
     box.changeBoxes()
     println("${box.value1} and ${box.value2}")
@@ -23,7 +25,7 @@ fun main() {
 
 
 class SomeCollection<T>(val list: List<T>) {
-    fun <T> invert(list: List<T>) {
+    private fun <T> invert(list: List<T>) {
         val invertedList = list.reversed()
         println(invertedList.joinToString(separator = "\n"))
     }
@@ -34,12 +36,14 @@ class SomeCollection<T>(val list: List<T>) {
 // Do not change code below
 class Info {
     companion object Info {
-        fun <T> info(list: List<T>): String {
+        private fun <T> info(list: List<T>): String {
             return if (list.isEmpty()) {
                 "[]"
             } else {
-                list.joinToString(prefix = "[",
-                                  postfix = "]")
+                list.joinToString(
+                    prefix = "[",
+                    postfix = "]"
+                )
             }
         }
     }

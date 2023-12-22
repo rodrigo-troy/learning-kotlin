@@ -9,7 +9,7 @@ $ Project: learning-kotlin
  */
 data class Ship(val name: String, val ammunition: Int)
 
-fun main() {
+private fun main() {
     val ships = "HMS-100 USS-200 BMS-50 BMS-150 USS-10".split(" ")
     val shipsList = ships.map { Ship(it.split("-")[0], it.split("-")[1].toInt()) }
 

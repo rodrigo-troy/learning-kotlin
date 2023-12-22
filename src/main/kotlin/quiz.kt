@@ -5,7 +5,7 @@ $ Project: learning-kotlin
  * Date: 09-02-23
  * Time: 18:32
  */
-fun main() {
+private fun main() {
     val quizAnswer1 = 15
     var quizAnswer2 = 3
     val quizAnswer3 = "isosceles"

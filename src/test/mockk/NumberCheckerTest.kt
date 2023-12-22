@@ -11,7 +11,7 @@ $ Project: learning-kotlin
  */
 class NumberCheckerTest {
  @Test
- fun `Test checkNumber function with even number`() {
+ private fun `Test checkNumber private fun ction with even number`() {
   val numberChecker = NumberChecker()
   val userInput = mockk<Int>()
   every { userInput } returns 2
@@ -22,7 +22,7 @@ class NumberCheckerTest {
  }
 
  @Test
- fun `Test checkNumber function with odd number`() {
+ private fun `Test checkNumber private fun ction with odd number`() {
   val numberChecker = NumberChecker()
   val userInput = mockk<Int>()
   every { userInput } returns 3
@@ -33,7 +33,7 @@ class NumberCheckerTest {
  }
 
  @Test
- fun `Test checkNumber function with zero`() {
+ private fun `Test checkNumber private fun ction with zero`() {
   val numberChecker = NumberChecker()
   val userInput = mockk<Int>()
   every { userInput } returns 0
@@ -44,7 +44,7 @@ class NumberCheckerTest {
  }
 
  @Test
- fun `Test checkNumber function with negative even number`() {
+ private fun `Test checkNumber private fun ction with negative even number`() {
   val numberChecker = NumberChecker()
   val userInput = mockk<Int>()
   every { userInput } returns -2
@@ -55,7 +55,7 @@ class NumberCheckerTest {
  }
 
  @Test
- fun `Test checkNumber function with negative odd number`() {
+ private fun `Test checkNumber private fun ction with negative odd number`() {
   val numberChecker = NumberChecker()
   val userInput = mockk<Int>()
   every { userInput } returns -3

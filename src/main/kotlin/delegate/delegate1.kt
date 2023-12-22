@@ -32,7 +32,7 @@ class MyNewClass(base: MyInterface) : MyInterface by base {
     }
 }
 
-fun main() {
+private fun main() {
     val myImplementation = MyImplementation()
     val delegate = MyNewClass(myImplementation)
     delegate.print()

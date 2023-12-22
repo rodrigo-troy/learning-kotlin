@@ -7,11 +7,13 @@ $ Project: learning-kotlin
  */
 data class Ship2(val name: String, val ammunition: Int)
 
-fun main() {
+private fun main() {
     val ships = "XWing-100 YWing-200 TWing-50 TIEFighter-300".split(" ")
     val shipsList = ships.map {
-        Ship2(it.split("-")[0],
-              it.split("-")[1].toInt())
+        Ship2(
+            it.split("-")[0],
+            it.split("-")[1].toInt()
+        )
     }
 
     val chunked: List<List<Ship2>> = shipsList.chunked(3)

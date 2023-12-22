@@ -29,7 +29,7 @@ class FilterExample : Filter {
     }
 }
 
-fun main() {
+private fun main() {
     val demoArray = intArrayOf(0, 1, 2, 3, 4, 5)
     demo(demoArray)
 }

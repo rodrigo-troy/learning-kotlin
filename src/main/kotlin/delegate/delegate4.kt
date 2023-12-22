@@ -7,13 +7,13 @@ $ Project: learning-kotlin
  * Date: 31-03-23
  * Time: 13:20
  */
-interface ILogHolder {
+private interface ILogHolder {
     fun printLog()
     fun collectLog(log: String)
     var curLog: String
 }
 
-class Logger : ILogHolder {
+private class Logger : ILogHolder {
     override fun printLog() {
         println(curLog)
     }
@@ -27,7 +27,7 @@ class Logger : ILogHolder {
 // Do not change the code above
 
 // Introduce the delegate here, following the argument declaration
-class ErrorHandler(base: ILogHolder) : ILogHolder by base {
+private class ErrorHandler(base: ILogHolder) : ILogHolder by base {
     var errorMessage: String = ""
     fun getErrorMessage(msg: String) {
         errorMessage = msg
@@ -39,13 +39,13 @@ class ErrorHandler(base: ILogHolder) : ILogHolder by base {
     }
 }
 
-fun doSomething(handler: ErrorHandler) {
+private fun doSomething(handler: ErrorHandler) {
     handler.getErrorMessage("Access denied")
     handler.getErrorMessage("Out of memory")
     handler.getErrorMessage("I'm not an error")
 }
 
-fun main() {
+private fun main() {
     val log = Logger()
     val handler = ErrorHandler(log)
 

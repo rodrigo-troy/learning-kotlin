@@ -9,7 +9,7 @@ import kotlin.math.pow
 import kotlin.math.sqrt
 
 
-fun main(args: Array<String>) {
+private fun main(args: Array<String>) {
     //printInvertedString()
     //findAvailableSpace(args)
     //printLine()
@@ -29,9 +29,9 @@ fun main(args: Array<String>) {
 
 private const val pi = PI
 
-fun printMaxValue() = println(generateSequence { readln().toInt() }.takeWhile { it != 0 }.maxOrNull())
+private fun printMaxValue() = println(generateSequence { readln().toInt() }.takeWhile { it != 0 }.maxOrNull())
 
-fun calculateArea() {
+private fun calculateArea() {
     when (readLine()) {
         "triangle" -> {
             val (a, b, c) = List(3) { readln().toDouble() }
@@ -52,7 +52,7 @@ fun calculateArea() {
 }
 
 
-fun printThirdRow() {
+private fun printThirdRow() {
     val inputArray = arrayOf(
         arrayOf(
             "(¬‿¬)_",
@@ -71,7 +71,7 @@ fun printThirdRow() {
     print(inputArray[2].joinToString(" "))
 }
 
-fun printMatrix(matrix: Array<IntArray>) {
+private fun printMatrix(matrix: Array<IntArray>) {
     println()
     print("Cinema:\n  ")
     (1..matrix[0].size).forEach { i ->
@@ -91,7 +91,7 @@ fun printMatrix(matrix: Array<IntArray>) {
     println()
 }
 
-fun printDogFace() {
+private fun printDogFace() {
     println("   ^__^")
     println("  (oo)\\_______")
     println("  (__)\\       )\\/\\")
@@ -99,13 +99,13 @@ fun printDogFace() {
     println("      ||     ||")
 }
 
-fun countDivisibleNumbers(
+private fun countDivisibleNumbers(
     a: Int,
     b: Int,
     n: Int
 ): Int = (a..b).count { it % n == 0 }.also { println(it) }
 
-fun createSizeClass() {
+private fun createSizeClass() {
     val size = Size(
         10,
         20
@@ -113,7 +113,7 @@ fun createSizeClass() {
     println("The area is ${size.area}")
 }
 
-fun createByteTimer() {
+private fun createByteTimer() {
     val timer = ByteTimer(200)
     println(timer.time)
 }
@@ -121,7 +121,7 @@ fun createByteTimer() {
 //Given the number N with an even number of digits.
 // If the sum of the first half of the digits equals the sum of the second half of the digits, then this number is considered lucky.
 // For a given number, output "YES" if this number is lucky, otherwise output "NO".
-fun luckyNumber() {
+private fun luckyNumber() {
     val num = readln()
     val num1 = num.substring(
         0,
@@ -136,7 +136,7 @@ fun luckyNumber() {
     }
 }
 
-fun printColors() {
+private fun printColors() {
     // Set foreground colors
     for (i in 30..37) print("\u001b[${i}m ${"%3d".format(i)}  ")
     for (i in 90..97) print("\u001b[${i}m ${"%3d".format(i)}  ")
@@ -188,7 +188,7 @@ fun printColors() {
     println("Done!")
 }
 
-fun splitString(
+private fun splitString(
     text: String,
     pieces: Int
 ) {
@@ -201,14 +201,14 @@ fun splitString(
     result.forEach(::println)
 }
 
-fun f(n: Int): Int = if (n > 2) f(n - 1) + f(n - 2) + f(n - 3) else n
+private fun f(n: Int): Int = if (n > 2) f(n - 1) + f(n - 2) + f(n - 3) else n
 
-fun destructuring() {
+private fun destructuring() {
     val (first, last, age) = readln().split(" ")
     println("${first.uppercase(Locale.getDefault()).first()}. $last, $age years old")
 }
 
-fun getPercentage() {
+private fun getPercentage() {
     Scanner(File("file.txt")).use { sc ->
         val number = sc.nextInt()
         println(number * 100)
@@ -235,7 +235,7 @@ fun getPercentage() {
     println(count.toDouble() / word.length * 100)
 }
 
-fun daysDifference(date1: String, date2: String): Int {
+private fun daysDifference(date1: String, date2: String): Int {
     val d1 = LocalDate.parse(date1)
     val d2 = LocalDate.parse(date2)
 
@@ -245,11 +245,11 @@ fun daysDifference(date1: String, date2: String): Int {
     ).absoluteValue
 }
 
-fun printLine() = List(5) { readln() }
+private fun printLine() = List(5) { readln() }
     .map { "$it " }
     .forEach(::print)
 
-fun invertArray() {
+private fun invertArray() {
     //Do not touch code below
     var inputArray: Array<Array<String>> = arrayOf()
     val n = readLine()!!.toInt()
@@ -266,7 +266,7 @@ fun invertArray() {
 
 }
 
-fun findAvailableSpace(args: Array<String>) {
+private fun findAvailableSpace(args: Array<String>) {
     println("Program arguments: ${args.joinToString()}")
 
     val field = Array(5) { IntArray(5) { 0 } }
@@ -311,7 +311,7 @@ fun findAvailableSpace(args: Array<String>) {
     println(emptyColumns.distinct().joinToString(" "))
 }
 
-fun printInvertedString() {
+private fun printInvertedString() {
     val str = "Hello, Kotlin"
     var i = str.lastIndex
     while (i >= 1) {
@@ -320,14 +320,14 @@ fun printInvertedString() {
     }
 }
 
-fun checkRange() {
+private fun checkRange() {
     val (a, b, c, d, n) = List(5) { readln().toInt() }
     val range1 = a..b
     val range2 = c..d
     println(n in range1 || n in range2)
 }
 
-fun <T> getStringsOnly(list: List<T>): List<String> {
+private fun <T> getStringsOnly(list: List<T>): List<String> {
     val result = list.filterIsInstance<String>()
 
     return result

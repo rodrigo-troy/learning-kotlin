@@ -8,7 +8,7 @@ $ Project: learning-kotlin
  * Time: 11:50
  */
 class NumberChecker {
-    fun checkNumber(number: Int): String {
+    private fun checkNumber(number: Int): String {
         return if (number % 2 == 0) "even" else "odd"
     }
 }

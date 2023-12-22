@@ -5,7 +5,7 @@ $ Project: learning-kotlin
  * Date: 02-05-23
  * Time: 17:25
  */
-inline fun <reified T> filterByType(list: List<Any>): List<T> {
+inline private fun <reified T> filterByType(list: List<Any>): List<T> {
     val newList = mutableListOf<T>()
     for (item in list) {
         if (item is T) {
@@ -15,11 +15,11 @@ inline fun <reified T> filterByType(list: List<Any>): List<T> {
     return newList
 }
 
-inline fun <reified T> filterByType2(list: List<Any>): List<T> {
+inline private fun <reified T> filterByType2(list: List<Any>): List<T> {
     return list.filterIsInstance<T>()
 }
 
-fun main() {
+private fun main() {
     val mixedList = listOf("Kotlin", 1, 2, 3, "Java", "Android", 4, 5, 6)
     val stringList1: List<String> = filterByType(mixedList)
     println(stringList1)

@@ -7,7 +7,7 @@ $ Project: learning-kotlin
  * Date: 29-03-23
  * Time: 12:42
  */
-fun main() {
+private fun main() {
     val numbers = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
     val empty: List<Int> = emptyList()
 

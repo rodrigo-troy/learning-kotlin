@@ -7,7 +7,7 @@ $ Project: learning-kotlin
  * Date: 26-03-23
  * Time: 19:13
  */
-interface FirstInterface {
+private interface FirstInterface {
     fun f() {
         print("First")
     }
@@ -15,7 +15,7 @@ interface FirstInterface {
     fun g()
 }
 
-interface SecondInterface {
+private interface SecondInterface {
     fun f() {
         print("Second")
     }
@@ -25,13 +25,13 @@ interface SecondInterface {
     }
 }
 
-class FirstClass : FirstInterface {
+private class FirstClass : FirstInterface {
     override fun g() {
         print("g")
     }
 }
 
-class SecondClass : FirstInterface, SecondInterface {
+private class SecondClass : FirstInterface, SecondInterface {
     override fun f() {
         print("Class")
     }
@@ -41,7 +41,7 @@ class SecondClass : FirstInterface, SecondInterface {
     }
 }
 
-interface ThirdInterface {
+private interface ThirdInterface {
     fun f() {
         print("First")
     }
@@ -51,7 +51,7 @@ interface ThirdInterface {
     }
 }
 
-interface FourthInterface {
+private interface FourthInterface {
     fun f() {
         print("Second")
     }
@@ -61,7 +61,7 @@ interface FourthInterface {
     }
 }
 
-class ThirdClass : FirstInterface, SecondInterface {
+private class ThirdClass : FirstInterface, SecondInterface {
     override fun f() {
         super<FirstInterface>.f()
         super<SecondInterface>.f()

@@ -21,31 +21,31 @@ internal class BetaTest {
     }
 
     @BeforeAll
-    fun method3() {
+    private fun method3() {
         LOG.info("BeforeAll")
         number += 11
     }
 
     @AfterAll
-    fun method4() {
+    private fun method4() {
         LOG.info("AfterAll")
         number /= 3
     }
 
     @BeforeEach
-    fun method2() {
+    private fun method2() {
         LOG.info("BeforeEach")
         number -= 4
     }
 
     @AfterEach
-    fun method5() {
+    private fun method5() {
         LOG.info("AfterEach")
         LOG.info(number.toString())
     }
 
     @Test
-    fun method6() {
+    private fun method6() {
         LOG.info("Test1")
         number += 9
     }

@@ -49,7 +49,7 @@ class Client2(name: String, age: Int) {
         }
 }
 
-fun main() {
+private fun main() {
     val client = Client()
     println(client.name)
 
@@ -57,8 +57,10 @@ fun main() {
     // repository.list.add(1) // error: the setter is private in 'IntegerRepository'
     println(repository.list)
 
-    val client2 = Client2("Rodrigo",
-                          30)
+    val client2 = Client2(
+        "Rodrigo",
+        30
+    )
     client2.fullName = "Rodrigo Troy"
     client2.age = 31
     println("client2.fullName: ${client2.fullName} - client2.age: ${client2.age}")

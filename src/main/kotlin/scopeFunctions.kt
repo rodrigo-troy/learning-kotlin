@@ -4,7 +4,7 @@ $ Project: learning-kotlin
  * User: rodrigotroy
  * Date: 27-03-23
  * Time: 13:25
- * https://kotlinlang.org/docs/scope-functions.html
+ * https://kotlinlang.org/docs/scope-private fun ctions.html
  * https://hyperskill.org/learn/step/23478
  *
  * Recommendations:
@@ -15,11 +15,11 @@ $ Project: learning-kotlin
  * Object configuration and computing the result: run
  * Running statements where an expression is required: non-extension run
  * Additional effects: also
- * Grouping function calls on an object: with
+ * Grouping private fun ction calls on an object: with
  */
 data class Musician(var name: String, var instrument: String = "Guitar", var band: String = "Radiohead")
 
-fun main() {
+private fun main() {
     val musician = Musician("Jonny Greenwood").apply {
         instrument = "Banjo" // here we can also use this.instrument
     }

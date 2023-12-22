@@ -1,10 +1,10 @@
 import java.util.*
 
-fun swapInts(ints: IntArray): IntArray {
+private fun swapInts(ints: IntArray): IntArray {
     return intArrayOf(ints[1], ints[0])
 }
 
-fun main() {
+private fun main() {
     val scanner = Scanner(System.`in`)
 
     while (scanner.hasNextLine()) {

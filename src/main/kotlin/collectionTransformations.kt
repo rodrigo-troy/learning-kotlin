@@ -5,19 +5,23 @@ $ Project: learning-kotlin
  * Date: 01-04-23
  * Time: 17:26
  */
-fun main() {
-    val listNumbers: List<Int> = listOf(1,
-                                        2,
-                                        3,
-                                        4,
-                                        5)
+private fun main() {
+    val listNumbers: List<Int> = listOf(
+        1,
+        2,
+        3,
+        4,
+        5
+    )
     println("listNumbers: $listNumbers")
 
-    val listStrings: List<String> = listOf("one",
-                                           "two",
-                                           "three",
-                                           "four",
-                                           "five")
+    val listStrings: List<String> = listOf(
+        "one",
+        "two",
+        "three",
+        "four",
+        "five"
+    )
     println("listStrings: $listStrings")
 
     val zipped: List<Pair<Int, String>> = listNumbers.zip(listStrings)
@@ -27,16 +31,18 @@ fun main() {
     val unzipped: Pair<List<Int>, List<String>> = zipped.unzip()
     println("unzipped: $unzipped")
 
-    val numbers: List<Int> = listOf(1,
-                                    2,
-                                    3,
-                                    4,
-                                    5,
-                                    6,
-                                    7,
-                                    8,
-                                    9,
-                                    10)
+    val numbers: List<Int> = listOf(
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+    )
 
     val zippedWithDifferentLength: List<Pair<Int, String>> = numbers.zip(listStrings)
     println("zippedWithDifferentLength: $zippedWithDifferentLength")
@@ -58,20 +64,22 @@ fun main() {
     }
     println("associatedWithLambda: $associatedWithLambda")
 
-    val joinToString: String = numbers.joinToString(separator = " ; ",
-                                                    prefix = "{ ",
-                                                    postfix = " }",
-                                                    limit = 3,
-                                                    truncated = "..."
+    val joinToString: String = numbers.joinToString(
+        separator = " ; ",
+        prefix = "{ ",
+        postfix = " }",
+        limit = 3,
+        truncated = "..."
     )
     println("joinToString: $joinToString")
 
-    val joinTo = numbers.joinTo(StringBuilder(),
-                                separator = " ; ",
-                                prefix = "{ ",
-                                postfix = " }",
-                                limit = 3,
-                                truncated = "..."
+    val joinTo = numbers.joinTo(
+        StringBuilder(),
+        separator = " ; ",
+        prefix = "{ ",
+        postfix = " }",
+        limit = 3,
+        truncated = "..."
     )
     println("joinTo: $joinTo")
 }

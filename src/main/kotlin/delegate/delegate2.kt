@@ -8,9 +8,10 @@ $ Project: learning-kotlin
  * Time: 13:20
  */
 // First interface, specifies contract for callbacks
-interface ICallbackReceiver {
+private interface ICallbackReceiver {
     fun onBeforeAction()
     fun onAfterAction()
+
     fun action(function: () -> Unit) {
         onBeforeAction()
         function()
@@ -19,8 +20,8 @@ interface ICallbackReceiver {
 }
 
 // Second interface, specifies contract for logger
-interface ILogger {
-    fun getStubDateTime() = "05.11.2022-14:31:04" // stub
+private interface ILogger {
+    private fun getStubDateTime() = "05.11.2022-14:31:04" // stub
 
     val format: String
         get() = "[${getStubDateTime()}]: "
@@ -31,7 +32,7 @@ interface ILogger {
 /**
  *  Simple implementation of ILogger interface
  */
-class BasicLogger : ILogger {
+private class BasicLogger : ILogger {
     override fun print(s: String) = println(format + s)
 }
 
@@ -40,7 +41,7 @@ setting them to simply print to console each time they are called.
 However! For printing, it utilizes delegated BasicLogger, which
 in this example prints info with date and time markers.
  */
-class ConsoleNotifier(logger: ILogger) : ICallbackReceiver, ILogger by logger {
+private class ConsoleNotifier(logger: ILogger) : ICallbackReceiver, ILogger by logger {
     val onBeforeStr = "OnBefore!"
     val onAfterStr = "OnAfter!"
 
@@ -49,7 +50,7 @@ class ConsoleNotifier(logger: ILogger) : ICallbackReceiver, ILogger by logger {
     override fun onAfterAction() = print(onAfterStr)
 }
 
-fun main() {
+private fun main() {
     val logger = BasicLogger()
     val notifier = ConsoleNotifier(logger)
 

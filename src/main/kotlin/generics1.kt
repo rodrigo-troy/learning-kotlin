@@ -6,13 +6,11 @@ $ Project: learning-kotlin
  * Time: 20:02
  */
 
-class MyClass<T>(t: T) {
-
+private class MyClass<T>(t: T) {
     val item = t  // A field of "some type"
-
 }
 
-fun main() {
+private fun main() {
     val myClass = MyClass("Hello")
     println(myClass.item)
 
@@ -26,7 +24,7 @@ fun main() {
     println(myClass4.item)
 }
 
-class Foo {
+private class Foo {
     private fun <T> T.foo(that: T): T = throw Exception()
 
     init {
@@ -34,14 +32,16 @@ class Foo {
     }
 }
 
-class ListUtils {
+private class ListUtils {
     companion object Info {
-        fun <T> info(list: List<T>): String {
+        private fun <T> info(list: List<T>): String {
             return if (list.isEmpty()) {
                 "[]"
             } else {
-                list.joinToString(prefix = "[",
-                                  postfix = "]")
+                list.joinToString(
+                    prefix = "[",
+                    postfix = "]"
+                )
             }
         }
     }
