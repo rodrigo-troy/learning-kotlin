@@ -7,20 +7,20 @@ $ Project: learning-kotlin
  * Date: 26-03-23
  * Time: 19:17
  */
-//classic aproach
-interface Level {
+//classic approach
+private interface Level {
     fun getLevel(): Int
 }
 
-interface Enemy {
+private interface Enemy {
     fun isEnemy(): Boolean
 }
 
-interface Class {
+private interface Class {
     fun getClass(): String
 }
 
-class DangerousEnemyWarrior : Level, Enemy, Class {
+private class DangerousEnemyWarrior : Level, Enemy, Class {
     override fun getLevel(): Int {
         return 10
     }
@@ -34,48 +34,48 @@ class DangerousEnemyWarrior : Level, Enemy, Class {
     }
 }
 
-//Kotlin composition aproach
-object Dangerous : Level {
+//Kotlin composition approach******************************************************
+private object Dangerous : Level {
     override fun getLevel(): Int {
         return 10
     }
 }
 
-object NotDangerous : Level {
+private object NotDangerous : Level {
     override fun getLevel(): Int {
         return 1
     }
 }
 
-object Foe : Enemy {
+private object Foe : Enemy {
     override fun isEnemy(): Boolean {
         return true
     }
 }
 
-object Friend : Enemy {
+private object Friend : Enemy {
     override fun isEnemy(): Boolean {
         return false
     }
 }
 
-object Warrior : Class {
+private object Warrior : Class {
     override fun getClass(): String {
         return "Warrior"
     }
 }
 
-object Wizard : Class {
+private object Wizard : Class {
     override fun getClass(): String {
         return "Wizard"
     }
 }
 
-class DangerousKotlinEnemyWarrior : Level by Dangerous, Enemy by Foe, Class by Warrior
+private class DangerousKotlinEnemyWarrior : Level by Dangerous, Enemy by Foe, Class by Warrior
 
-class NotDangerousFriendlyWizard : Level by NotDangerous, Enemy by Friend, Class by Wizard
+private class NotDangerousFriendlyWizard : Level by NotDangerous, Enemy by Friend, Class by Wizard
 
-fun main() {
+private fun main() {
     val dangerousEnemyWarrior = DangerousEnemyWarrior()
     println("Level: ${dangerousEnemyWarrior.getLevel()}")
     println("Is enemy: ${dangerousEnemyWarrior.isEnemy()}")
