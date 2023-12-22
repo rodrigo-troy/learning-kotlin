@@ -4,7 +4,7 @@ package delegate
  * This is the main interface for the delegate pattern example.
  * It declares a print method and a msg property that needs to be implemented by any class that uses this interface.
  */
-interface MyInterface {
+private interface MyInterface {
     fun print()
     val msg: String
 }
@@ -13,7 +13,7 @@ interface MyInterface {
  * This class implements the MyInterface interface.
  * It provides the implementation for the print method and the msg property.
  */
-class MyImplementation : MyInterface {
+private class MyImplementation : MyInterface {
     override fun print() {
         println(msg)
     }
@@ -26,7 +26,7 @@ class MyImplementation : MyInterface {
  * It takes an instance of a class that implements MyInterface and delegates the implementation of the interface to that instance.
  * It also overrides the msg property to provide its own message.
  */
-class MyNewClass(base: MyInterface) : MyInterface by base {
+private class MyNewClass(base: MyInterface) : MyInterface by base {
     override val msg = "Delegate sends regards."
     private val base1 = base
 

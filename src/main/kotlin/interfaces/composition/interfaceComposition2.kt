@@ -1,4 +1,4 @@
-package `interface`.composition
+package interfaces.composition
 
 interface Color {
     fun getColorCode(): String

@@ -5,7 +5,7 @@ $ Project: learning-kotlin
  * Date: 01-04-23
  * Time: 17:58
  */
-data class Ship2(val name: String, val ammunition: Int)
+private data class Ship2(val name: String, val ammunition: Int)
 
 private fun main() {
     val ships = "XWing-100 YWing-200 TWing-50 TIEFighter-300".split(" ")
