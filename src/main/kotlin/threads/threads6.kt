@@ -42,7 +42,7 @@ class SlowStringProcessor(private val userInput: String) : Thread() {
     override fun run() {
         val currentId = currentThread().id
 
-        if (currentId == mainThreadId) {
+        if (currentId == mainThreadIdentifier) {
             throw RuntimeException("You must start a new thread!")
         }
 
