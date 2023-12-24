@@ -21,7 +21,7 @@ package threads
  *
  * @property value The current value of the counter
  */
-class Counter {
+private class Counter {
     var value: Long = 0
 
     fun increment() {
@@ -34,7 +34,7 @@ class Counter {
  *
  * @property counter The counter object to be incremented.
  */
-class CounterThread(private val counter: Counter) : Thread() {
+private class CounterThread(private val counter: Counter) : Thread() {
     override fun run() {
         counter.increment()
     }
