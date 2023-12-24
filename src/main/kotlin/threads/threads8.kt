@@ -4,7 +4,7 @@ package threads
  * The `Counter` class represents a simple counter that can be incremented.
  * It provides a method to increment the value of the counter by one.
  *
- * The operation value++ can be decomposed into three steps:
+ * The operation value++ is not atomic. This means that it's not performed as a single, indivisible operation. Instead, it's executed in three distinct steps:
  *
  * 1. read the current value;
  * 2. increment the value by 1;
