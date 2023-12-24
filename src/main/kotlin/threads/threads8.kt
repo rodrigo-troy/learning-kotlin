@@ -68,13 +68,13 @@ private fun executeCounterThreads(useJoin: Boolean) {
  * @see executeCounterThreads
  */
 fun main() {
-    repeat(100) {
+    repeat(20) {
         executeCounterThreads(true)
     }
 
     println()
 
-    repeat(100) {
+    repeat(20) {
         executeCounterThreads(false)
     }
 }
