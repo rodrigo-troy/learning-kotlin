@@ -1,5 +1,10 @@
 import kotlin.concurrent.thread
 
+private interface ICounter {
+    var count: Int
+    fun inc()
+}
+
 /**
  * The `Counter` class represents a simple counter that can be incremented by calling the `inc` method.
  *
@@ -7,12 +12,57 @@ import kotlin.concurrent.thread
  *  ```kotlin
  *  val counterInstance = Counter()
  *  counterInstance.inc()*/
-private class Counter {
-    var count = 0
+private class Counter : ICounter {
+    override var count = 0
 
-    fun inc() {
+    override fun inc() {
         count++
     }
+}
+
+/**
+ * The SynchronizedCounter class is a thread-safe counter implementation with a single public method, inc().
+ * This class uses the @Synchronized annotation to ensure that only one thread can access the increment operation
+ * at a time, preventing race conditions and maintaining data integrity.
+ *
+ * Usage:
+ *
+ * val counterInstance = SynchronizedCounter()
+ * counterInstance.inc()
+ *
+ * @property count The current count value.
+ */
+private class SynchronizedCounter : ICounter {
+    override var count = 0
+
+    @Synchronized
+    override fun inc() {
+        count++
+    }
+}
+
+/**
+ * Runs two threads concurrently to increment a shared counter instance.
+ *
+ * @param counter An instance of a class implementing the [ICounter] interface, representing the counter to be incremented.
+ */
+private fun runCounterThreads(counter: ICounter) {
+    val thread1 = thread(block = {
+        for (i in 1..10_000_000) {
+            counter.inc();
+        }
+    })
+
+    val thread2 = thread(block = {
+        for (i in 1..10_000_000) {
+            counter.inc();
+        }
+    })
+
+    thread1.join()
+    thread2.join()
+
+    println("The result of the threads' work: ${counter.count}")
 }
 
 /**
@@ -26,25 +76,9 @@ private class Counter {
  *
  * This happens because sometimes a thread does not see the changes of shared data made by another thread, and sometimes a thread may see an intermediate value of a non-atomic operation. Those are examples of visibility and atomicity problems we deal with while working with shared data.
  *
- * That is why increasing a value by multiple threads is a critical section.
+ * This is why incrementing a value concurrently by multiple threads is not trivial, and we must carefully manage critical sections in our code.
  */
 fun main() {
-    val counterInstance = Counter()
-
-    val thread1 = thread(block = {
-        for (i in 1..10_000_000) {
-            counterInstance.inc();
-        }
-    })
-
-    val thread2 = thread(block = {
-        for (i in 1..10_000_000) {
-            counterInstance.inc();
-        }
-    })
-
-    thread1.join()
-    thread2.join()
-
-    println("The result of the threads' work: ${counterInstance.count}")
+    runCounterThreads(Counter())
+    runCounterThreads(SynchronizedCounter())
 }
