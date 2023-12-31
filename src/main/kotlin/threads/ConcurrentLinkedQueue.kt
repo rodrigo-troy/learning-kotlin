@@ -3,18 +3,34 @@ package threads
 import java.util.concurrent.ConcurrentLinkedQueue
 import kotlin.concurrent.thread
 
+private fun ConcurrentLinkedQueue<Int>.isSorted(): Boolean {
+    var previous = Int.MIN_VALUE  // Smallest possible integer value
+    for (number in this) {
+        if (number < previous) {
+            return false
+        }
+        previous = number
+    }
+    return true
+}
+
 /**
  * Adds numbers to the provided ConcurrentLinkedQueue.
  * This function is not thread-safe. If two threads call this function concurrently, the numbers added to the queue
  * may be out of order.
  *
+ *
+ * Note that because the ConcurrentLinkedQueue is indeed thread-safe, the integrity of the queue and its operations
+ * (add in this case) will not be compromised even when accessed from multiple threads concurrently.
+ *
+ *
  * @param target the ConcurrentLinkedQueue to which numbers will be added
  */
 fun addNumbers(target: ConcurrentLinkedQueue<Int>) {
-    val threadName = Thread.currentThread().name
-    println("$threadName started")
-    for (i in 0..9_999) {
-        println("$threadName adding $i")
+    //val threadName = Thread.currentThread().name
+    //println("$threadName started")
+    for (i in 0..100) {
+        println("${Thread.currentThread().name} adding $i")
         target.add(i)
     }
 }
@@ -37,11 +53,12 @@ fun main() {
 
     writer.join()
 
-    println(numbers.size)
 
     println()
-    println("--------------------")
+    println("----------------------------------------------------------------------------------------------------")
     println()
 
-    numbers.forEach { println(it) }
+    println("Is the queue sorted? ${numbers.isSorted()}")
+    println("The queue contains ${numbers.size} elements:")
+    numbers.forEach { print("$it ") }
 }
