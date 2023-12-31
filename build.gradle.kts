@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "1.9.22"
+    kotlin("plugin.serialization") version "1.9.22"
     application
     id("com.github.ben-manes.versions") version "0.50.0"
 }
@@ -12,6 +13,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
     implementation("ch.qos.logback:logback-classic:1.4.12")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
