@@ -27,4 +27,8 @@ fun main() {
 
     val serialized = Json.encodeToString(instance)
     println(serialized)
+
+    val jsonPrettyPrint = Json { prettyPrint = true }
+    val prettySerialized = jsonPrettyPrint.encodeToString(instance)
+    println(prettySerialized)
 }
