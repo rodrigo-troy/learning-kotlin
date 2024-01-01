@@ -15,7 +15,7 @@ $ Project: learning-kotlin
  * Object configuration and computing the result: run
  * Running statements where an expression is required: non-extension run
  * Additional effects: also
- * Grouping private fun ction calls on an object: with
+ * Grouping private function calls on an object: with
  */
 data class Musician(var name: String, var instrument: String = "Guitar", var band: String = "Radiohead")
 
