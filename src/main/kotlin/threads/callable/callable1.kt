@@ -5,11 +5,11 @@ import java.util.concurrent.Callable
 import java.util.concurrent.TimeUnit
 
 /**
- * Created with IntelliJ IDEA.
-$ Project: learning-kotlin
- * User: rodrigotroy
- * Date: 03-01-24
- * Time: 17:51
+ * Main method to start the program execution.
+ *
+ * This method prints the current date and time along with the thread ID and starts counting.
+ * It creates a Callable object named generator that sleeps for 5 seconds and then prints the current date and time,
+ * thread ID, and returns the value 70000. Finally, it prints the result returned by the generator.
  */
 fun main() {
     println("${LocalDateTime.now()} - Thread ID: ${Thread.currentThread().id} - Start counting")
