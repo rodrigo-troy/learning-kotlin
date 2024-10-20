@@ -2,10 +2,9 @@ plugins {
     kotlin("jvm") version "2.0.21"
     kotlin("plugin.serialization") version "2.0.21"
     id("com.github.ben-manes.versions") version "0.51.0"
-    application
 }
 
-group = "me.rodrigotroy"
+group = "com.rodrigotroy"
 version = "0.1"
 
 repositories {
@@ -28,8 +27,4 @@ tasks.test {
 //https://kotlinlang.org/docs/gradle-configure-project.html#gradle-java-toolchains-support
 kotlin {
     jvmToolchain(17)
-}
-
-application {
-    mainClass.set("MainKt")
 }
