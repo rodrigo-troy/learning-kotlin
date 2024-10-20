@@ -24,7 +24,8 @@ private fun main(args: Array<String>) {
     //println(f(6))
     //println(daysDifference("2020-01-01", "2020-01-02"))
     //printThirdRow()
-    printMaxValue()
+    //printMaxValue()
+    checkEquals()
 }
 
 private const val pi = PI
@@ -201,7 +202,7 @@ private fun splitString(
     result.forEach(::println)
 }
 
-private fun f(n: Int): Int = if (n > 2) f(n - 1) + f(n - 2) + f(n - 3) else n
+private fun computeSum(n: Int): Int = if (n > 2) computeSum(n - 1) + computeSum(n - 2) + computeSum(n - 3) else n
 
 private fun destructuring() {
     val (first, last, age) = readln().split(" ")
@@ -248,6 +249,8 @@ private fun daysDifference(date1: String, date2: String): Int {
 private fun printLine() = List(5) { readln() }
     .map { "$it " }
     .forEach(::print)
+
+private fun checkEquals() = List(2) { readln() }.let { (a, b) -> println(a == b) }
 
 private fun invertArray() {
     //Do not touch code below
