@@ -49,13 +49,13 @@ private class SynchronizedCounter : ICounter {
 private fun runCounterThreads(counter: ICounter) {
     val thread1 = thread(block = {
         for (i in 1..10_000_000) {
-            counter.inc();
+            counter.inc()
         }
     })
 
     val thread2 = thread(block = {
         for (i in 1..10_000_000) {
-            counter.inc();
+            counter.inc()
         }
     })
 
