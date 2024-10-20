@@ -9,7 +9,7 @@ import kotlin.math.pow
 import kotlin.math.sqrt
 
 
-private fun main(args: Array<String>) {
+ fun main(args: Array<String>) {
     //printInvertedString()
     //findAvailableSpace(args)
     //printLine()
