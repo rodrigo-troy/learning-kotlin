@@ -9,7 +9,7 @@ fun findSum(num: Int): Int {
 
     for (i in 1..5) {
         executor.submit {
-            sum += num / i;
+            sum += num / i
             println("Sum: $sum")
         }
     }
