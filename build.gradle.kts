@@ -1,8 +1,8 @@
 plugins {
     kotlin("jvm") version "2.0.21"
     kotlin("plugin.serialization") version "2.0.21"
-    application
     id("com.github.ben-manes.versions") version "0.51.0"
+    application
 }
 
 group = "me.rodrigotroy"
