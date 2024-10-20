@@ -1,8 +1,8 @@
 plugins {
-    kotlin("jvm") version "1.9.22"
-    kotlin("plugin.serialization") version "1.9.22"
+    kotlin("jvm") version "2.0.21"
+    kotlin("plugin.serialization") version "2.0.21"
     application
-    id("com.github.ben-manes.versions") version "0.50.0"
+    id("com.github.ben-manes.versions") version "0.51.0"
 }
 
 group = "me.rodrigotroy"
@@ -13,12 +13,12 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
-    implementation("ch.qos.logback:logback-classic:1.4.12")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.3")
+    implementation("ch.qos.logback:logback-classic:1.5.11")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.5.0")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
-    testImplementation(kotlin("test"))
-    testImplementation("io.mockk:mockk:1.13.8")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.3")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:2.0.21")
+    testImplementation("io.mockk:mockk:1.13.13")
 }
 
 tasks.test {
