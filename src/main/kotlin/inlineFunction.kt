@@ -20,7 +20,7 @@ $ Project: learning-kotlin
  * It's essential to note that each time a private fun ction is called, a new instance of the private fun ction is created in memory. This means that if a private fun ction is called repeatedly, multiple instances of that private fun ction will be created in memory.
  *
  * Overall, inline private fun ctions can be a powerful tool in Kotlin for optimizing performance-critical code by eliminating private fun ction call overhead. However, they should be used with care, as inlining too much code can lead to an increased binary size and longer compile time.*/
-inline private fun measureTimeMillis(block: () -> Unit): Long {
+private inline fun measureTimeMillis(block: () -> Unit): Long {
     val startTime = System.currentTimeMillis()
     block()
     return System.currentTimeMillis() - startTime
