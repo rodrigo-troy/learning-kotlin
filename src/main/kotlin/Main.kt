@@ -9,7 +9,7 @@ import kotlin.math.pow
 import kotlin.math.sqrt
 
 
- fun main(args: Array<String>) {
+fun main(args: Array<String>) {
     //printInvertedString()
     //findAvailableSpace(args)
     //printLine()
@@ -51,7 +51,6 @@ private fun calculateArea() {
         }
     }
 }
-
 
 private fun printThirdRow() {
     val inputArray = arrayOf(
@@ -119,9 +118,14 @@ private fun createByteTimer() {
     println(timer.time)
 }
 
-//Given the number N with an even number of digits.
-// If the sum of the first half of the digits equals the sum of the second half of the digits, then this number is considered lucky.
-// For a given number, output "YES" if this number is lucky, otherwise output "NO".
+/**
+ * Checks if the sum of the digits in the first half of the input string is equal to
+ * the sum of the digits in the second half of the input string.
+ *
+ * The function reads a string input, splits it into two halves, converts each half
+ * to a list of integers, and then calculates the sum of the digits in each half.
+ * It prints "YES" if the sums are equal, otherwise it prints "NO".
+ */
 private fun luckyNumber() {
     val num = readln()
     val num1 = num.substring(
@@ -250,10 +254,23 @@ private fun printLine() = List(5) { readln() }
     .map { "$it " }
     .forEach(::print)
 
-private fun checkEquals() = List(2) { readln() }.let { (a, b) -> println(a == b) }
+private fun checkEquals() = List(2) { readln() }.let { (a, b) -> println(a.reversed() == b) }
+
+private fun printName() = List(2) { readln() }.let { (a, b) -> println("${a.first()}. $b") }
+
+fun reversed(args: Array<String>) {
+    // Step 1: Read a line of text from the standard input
+    val line = readLine()!!
+
+    // Step 2: Split the line into words
+    val words = line.split(" ")
+
+    // Step 3: Reverse the words and print the result
+    println(words.reversed().joinToString(" "))
+}
+
 
 private fun invertArray() {
-    //Do not touch code below
     var inputArray: Array<Array<String>> = arrayOf()
     val n = readLine()!!.toInt()
     for (i in 0 until n) {
@@ -266,7 +283,6 @@ private fun invertArray() {
     )
 
     println(newArray.contentDeepToString())
-
 }
 
 private fun findAvailableSpace(args: Array<String>) {
